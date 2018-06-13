@@ -1,0 +1,29 @@
+version : '2'
+services :
+  keycloak :
+    image: jboss/keycloak
+    environment :
+      KEYCLOAK_USER : admin
+      KEYCLOAK_PASSWORD : admin
+      DB_VENDOR : H2
+    ports :
+      - 8080:8080
+
+  nodered :
+    build :
+      context : .
+      dockerfile : Dockerfile
+    ports :
+      - 1880:1880
+    links :
+      - keycloak:keycloak
+      - express:express
+
+  express:
+    build :
+      context : ./src
+      dockerfile : Dockerfile
+    ports :
+      - 8000:8000
+    links :
+      - keycloak:keycloak

@@ -1,0 +1,282 @@
+[
+    {
+        "id": "dea32b02.b4e728",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "c4fadf8e.46cda",
+        "type": "subflow",
+        "name": "Subflow 1",
+        "info": "",
+        "in": [],
+        "out": []
+    },
+    {
+        "id": "8d108241.43aa7",
+        "type": "subflow",
+        "name": "Subflow 2",
+        "info": "",
+        "in": [
+            {
+                "x": 330,
+                "y": 700,
+                "wires": [
+                    {
+                        "id": "a71371ae.c3cba"
+                    }
+                ]
+            }
+        ],
+        "out": []
+    },
+    {
+        "id": "b09725db.4e90b8",
+        "type": "subflow",
+        "name": "Subflow 1 (2)",
+        "info": "",
+        "in": [],
+        "out": []
+    },
+    {
+        "id": "615ef000.9f0bb",
+        "type": "openid-credentials",
+        "z": "",
+        "displayName": ""
+    },
+    {
+        "id": "35737f71.2e053",
+        "type": "openid-credentials",
+        "z": "",
+        "displayName": ""
+    },
+    {
+        "id": "3b287bee.98e9b4",
+        "type": "inject",
+        "z": "dea32b02.b4e728",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 360,
+        "y": 280,
+        "wires": [
+            [
+                "8fe98ca8.129d9"
+            ]
+        ]
+    },
+    {
+        "id": "8fe98ca8.129d9",
+        "type": "http request",
+        "z": "dea32b02.b4e728",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "url": "express:8000/",
+        "tls": "",
+        "x": 650,
+        "y": 280,
+        "wires": [
+            [
+                "f8690cd9.0388c"
+            ]
+        ]
+    },
+    {
+        "id": "f8690cd9.0388c",
+        "type": "debug",
+        "z": "dea32b02.b4e728",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 930,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "41529fea.78ee9",
+        "type": "inject",
+        "z": "dea32b02.b4e728",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 360,
+        "y": 360,
+        "wires": [
+            [
+                "d0b3e5d3.5421c8"
+            ]
+        ]
+    },
+    {
+        "id": "d0b3e5d3.5421c8",
+        "type": "http request",
+        "z": "dea32b02.b4e728",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "url": "express:8000/test",
+        "tls": "",
+        "x": 650,
+        "y": 360,
+        "wires": [
+            [
+                "f77dc7bb.550748"
+            ]
+        ]
+    },
+    {
+        "id": "f77dc7bb.550748",
+        "type": "debug",
+        "z": "dea32b02.b4e728",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 930,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "e532c3eb.692e7",
+        "type": "inject",
+        "z": "dea32b02.b4e728",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 360,
+        "y": 440,
+        "wires": [
+            [
+                "54259ef8.b6d71"
+            ]
+        ]
+    },
+    {
+        "id": "8fd5a224.c7fa3",
+        "type": "http request",
+        "z": "dea32b02.b4e728",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "url": "express:8000/test",
+        "tls": "",
+        "x": 730,
+        "y": 440,
+        "wires": [
+            [
+                "438ebb46.e2cdc4"
+            ]
+        ]
+    },
+    {
+        "id": "438ebb46.e2cdc4",
+        "type": "debug",
+        "z": "dea32b02.b4e728",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 930,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "54259ef8.b6d71",
+        "type": "openid",
+        "z": "dea32b02.b4e728",
+        "name": "",
+        "openid": "35737f71.2e053",
+        "x": 540,
+        "y": 440,
+        "wires": [
+            [
+                "8fd5a224.c7fa3"
+            ]
+        ]
+    },
+    {
+        "id": "862f1fcf.b9f4",
+        "type": "debug",
+        "z": "8d108241.43aa7",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 660,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "a71371ae.c3cba",
+        "type": "function",
+        "z": "8d108241.43aa7",
+        "name": "",
+        "func": "msg.payload = \"toto\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 460,
+        "y": 700,
+        "wires": [
+            [
+                "862f1fcf.b9f4"
+            ]
+        ]
+    },
+    {
+        "id": "689123ab.6a67cc",
+        "type": "comment",
+        "z": "dea32b02.b4e728",
+        "name": "Unprotected without auth",
+        "info": "",
+        "x": 390,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "1f225d27.fcd773",
+        "type": "comment",
+        "z": "dea32b02.b4e728",
+        "name": "Protected without auth",
+        "info": "",
+        "x": 380,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "12a2641e.dfb6dc",
+        "type": "comment",
+        "z": "dea32b02.b4e728",
+        "name": "protected with auth",
+        "info": "",
+        "x": 370,
+        "y": 400,
+        "wires": []
+    }
+]
